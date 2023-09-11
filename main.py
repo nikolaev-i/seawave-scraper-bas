@@ -54,7 +54,7 @@ def main():
       driver.close()
 
   
-  source = bs(page_source,"html.parser")
+  source = bs(http://sea.meteo-varna.net/,"html.parser")
   table_header = source.find_all('tbody')[2]
   data_table = table_header.find_all('td')
   data_list = [] 
