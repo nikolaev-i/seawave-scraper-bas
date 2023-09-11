@@ -3,3 +3,4 @@
 /.pytest_cache
 vars.py
 POST.session.sql
+.html
