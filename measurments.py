@@ -1,5 +1,5 @@
 
-from sqlalchemy import Column, String, Integer, Date, Time, Float
+from sqlalchemy import Column, String, Integer, DateTime, Time, Float
 
 from base import Base
 
@@ -12,8 +12,7 @@ class Measurment(Base):
   id = Column(Integer, primary_key=True)
 
   buoy_name = Column(String)
-  date_taken = Column(Date)
-  time_taken = Column(Time)
+  datetime_taken = Column(DateTime)
 
   sea_state = Column(Integer)
   wave_height = Column(Float)
@@ -23,18 +22,17 @@ class Measurment(Base):
   water_temperature = Column(Float)
 
 
-  def __init__(self, buoy_name, date_taken, time_taken, sea_state, wave_height, wave_direction, wind_speed, wind_direction, water_temperature):
-    
+  def __init__(self, buoy_name, date_taken, sea_state, wave_height, wave_direction, wind_speed, wind_direction, water_temperature):
+
     self.buoy_name = buoy_name
     self.date_taken = date_taken
-    self.time_taken = time_taken
     self.sea_state = sea_state
     self.wave_height = wave_height
     self.wave_direction = wave_direction
     self.wind_speed = wind_speed
     self.wind_direction = wind_direction
     self.water_temperature = water_temperature
-  
+
 
 
 

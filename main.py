@@ -70,14 +70,10 @@ def main():
       if len(single_record) != 8:
         single_record.append(data)
         if len(single_record) == 8:
-          single_record.extend(single_record[7].split(' '))
-          single_record.pop(7)
-          date_obj = datetime.strptime(single_record[7], "%d.%m.%Y")
-          single_record[7] = date_obj.strftime("%Y-%m-%d")
           single_record[3] = int(single_record[3].split(".")[0])
           if '' == single_record[6]:
             single_record[6] = 0
-          measurment = Measurment(single_record[0],single_record[7],single_record[8],single_record[1],single_record[2],single_record[3],single_record[4],single_record[5],single_record[6])
+          measurment = Measurment(single_record[0],single_record[7],single_record[1],single_record[2],single_record[3],single_record[4],single_record[5],single_record[6])
           session.add(measurment)
           single_record = []
           session.commit()
